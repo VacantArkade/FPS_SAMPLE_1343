@@ -10,6 +10,7 @@ public class Gun : MonoBehaviour
     [SerializeField] Animator anim;
 
     [SerializeField] PlayerHUD HUD;
+    [SerializeField] ScreenShake shake;
 
     // stats
     [SerializeField] int maxAmmo;
@@ -48,6 +49,8 @@ public class Gun : MonoBehaviour
         anim.SetTrigger("shoot");
         timeBetweenShots = 0;
         ammo -= 1;
+        shake.StartShake();
+        shake.EndShake();
         return true;
     }
 
