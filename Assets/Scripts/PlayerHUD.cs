@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Events;
 
 public class PlayerHUD : MonoBehaviour
 {
@@ -11,6 +12,9 @@ public class PlayerHUD : MonoBehaviour
     [SerializeField] TMP_Text maxAmmoText;
 
     FPSController player;
+    //int ammo;
+
+    public UnityEvent<int> OnAmmoChanged;
 
     // Start is called before the first frame update
     void Start()

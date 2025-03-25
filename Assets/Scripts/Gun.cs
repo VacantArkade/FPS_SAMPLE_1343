@@ -9,6 +9,8 @@ public class Gun : MonoBehaviour
     [SerializeField] GameObject bulletPrefab;
     [SerializeField] Animator anim;
 
+    [SerializeField] PlayerHUD HUD;
+
     // stats
     [SerializeField] int maxAmmo;
     [SerializeField] float timeBetweenShots = 0.1f;
@@ -46,12 +48,16 @@ public class Gun : MonoBehaviour
         anim.SetTrigger("shoot");
         timeBetweenShots = 0;
         ammo -= 1;
-
         return true;
     }
 
     public void AddAmmo(int amount)
     {
         ammo += amount;
+    }
+
+    public void checkAmmo(int amount)
+    {
+        HUD.OnAmmoChanged?.Invoke(ammo);
     }
 }
