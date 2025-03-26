@@ -49,8 +49,7 @@ public class Gun : MonoBehaviour
         anim.SetTrigger("shoot");
         timeBetweenShots = 0;
         ammo -= 1;
-        shake.StartShake();
-        shake.EndShake();
+        HUD.OnAmmoChanged.Invoke(ammo);
         return true;
     }
 

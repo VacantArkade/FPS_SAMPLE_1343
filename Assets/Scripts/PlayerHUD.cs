@@ -16,6 +16,8 @@ public class PlayerHUD : MonoBehaviour
 
     public UnityEvent<int> OnAmmoChanged;
 
+
+
     // Start is called before the first frame update
     void Start()
     {
