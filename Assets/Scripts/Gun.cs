@@ -55,6 +55,7 @@ public class Gun : MonoBehaviour
         timeBetweenShots = 0;
         ammo -= 1;
         HUD.checkAmmo(ammo);
+        shake.Recoil.Invoke();
         return true;
     }
 
