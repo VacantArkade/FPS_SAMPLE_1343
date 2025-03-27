@@ -14,7 +14,7 @@ public class PlayerHUD : MonoBehaviour
     FPSController player;
 
     int maxAmmo = 10;
-    int ammo;
+    int ammo = 10;
 
     public UnityEvent<int> OnAmmoChanged;
 
