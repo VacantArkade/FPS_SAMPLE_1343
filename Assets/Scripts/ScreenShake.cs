@@ -5,6 +5,9 @@ using Cinemachine;
 public class ScreenShake : MonoBehaviour
 {
     [SerializeField] CinemachineVirtualCamera vcam;
+
+    public UnityEvent Recoil;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -27,5 +30,11 @@ public class ScreenShake : MonoBehaviour
     public void EndShake()
     {
         vcam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = 0;
+    }
+
+    public void Recl()
+    {
+        StartShake();
+        EndShake();
     }
 }

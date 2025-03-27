@@ -12,6 +12,8 @@ public class PlayerHUD : MonoBehaviour
     [SerializeField] TMP_Text maxAmmoText;
 
     FPSController player;
+
+    int maxAmmo = 10;
     int ammo;
 
     public UnityEvent<int> OnAmmoChanged;
@@ -27,10 +29,11 @@ public class PlayerHUD : MonoBehaviour
     private void Update()
     {
         currentAmmoText.text = ammo.ToString();
+        maxAmmoText.text = maxAmmo.ToString();
     }
     public void checkAmmo(int amount)
     {
         OnAmmoChanged?.Invoke(ammo);
-        ammoSent = amount;
+        ammo = amount;
     }
 }
